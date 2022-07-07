@@ -22,6 +22,10 @@ If you want to serve them up locally then, it should be fine to run the followin
 
 The application is built using [PyScript](https://github.com/pyscript/pyscript), running Python in the browser, which in turn enables use of the marvellous [python-chess](https://github.com/niklasf/python-chess) package
 
+This repository is a modified copy of Neil Stoker's [Chess Match Viewer](https://github.com/nmstoker/ChessMatchViewer).
+
+This repository is for my article on [PyScript: Deno Deploy](https://www.jhanley.com/pyscript-deno-deploy/).
+
 ## Roadmap
 
 Not expecting to do anything major but will likely experiment with adding:
