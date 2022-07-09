@@ -4,10 +4,12 @@ import { format } from "https://deno.land/std/datetime/mod.ts";
 
 function log_request(req: Request, conn: ConnInfo) {
 	try {
+console.log(req);
 		let date = format(new Date(), "yyyy-MM-dd HH:mm:ss");
 		let region = Deno.env.get('DENO_REGION');
 		let client_ip = conn.remoteAddr.hostname;
 		let user_agent = req.headers.get('user-agent');
+		let url = req.url;
 
 		if (region === undefined) {
 			region = '';
@@ -21,11 +23,12 @@ function log_request(req: Request, conn: ConnInfo) {
 			Date: date,
 			Region: region,
 			ClientIp: client_ip,
+			Url: url,
 			UserAgent: user_agent
 		};
 
 		// console.log(record);
-		console.log(`"${date}", "${region}", "${client_ip}", "${user_agent}"`);
+		console.log(`"${date}", "${region}", "${client_ip}", "${url}, "${user_agent}"`);
 	}
 	catch (error) {
 		console.error('Error: ', error.message);
