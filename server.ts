@@ -4,7 +4,6 @@ import { format } from "https://deno.land/std/datetime/mod.ts";
 
 function log_request(req: Request, conn: ConnInfo) {
 	try {
-console.log(req);
 		let date = format(new Date(), "yyyy-MM-dd HH:mm:ss");
 		let region = Deno.env.get('DENO_REGION');
 		let client_ip = conn.remoteAddr.hostname;
