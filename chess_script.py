@@ -146,9 +146,15 @@ document.querySelector("#gameselect").addEventListener("change", new_game)
 new_match = create_proxy(_new_match)
 document.querySelector("#fileselect").addEventListener("change", new_match)
 
+watch = create_proxy(watch)
+document.querySelector("#mainbutton").addEventListener("click", watch)
+
 click_proxy = create_proxy(get_square)
 # TODO: see if this can be made more specific ???? (I think maybe just within SVG???)
 document.addEventListener("click", click_proxy)
+
+
+
 
 started = False
 board = chess.Board()
