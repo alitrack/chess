@@ -7,7 +7,7 @@ from js import console
 
 import js
 from js import document
-from pyodide import create_proxy
+from pyodide.ffi import create_proxy
 
 
 async def get_square(event):
@@ -83,7 +83,7 @@ async def watch(*args, **kwargs):
     else:
         started = False
 
-def load_games(pgn_location = "/kasparov-deep-blue-1997.pgn"):
+def load_games(pgn_location = "./kasparov-deep-blue-1997.pgn"):
     pgn = open_url(pgn_location)
     offsets = []
     games = []
@@ -155,6 +155,6 @@ board = chess.Board()
 draw(board)
 
 matches = ["Spassky | Bronstein 1960", "Fischer | Larsen 1971", "Kasparov | Deep Blue 1997"]
-files = ["/spassky_bronstein_1960.pgn", "/fischer_larsen_1971.pgn", "/kasparov-deep-blue-1997.pgn"]
+files = ["./spassky_bronstein_1960.pgn", "./fischer_larsen_1971.pgn", "./kasparov-deep-blue-1997.pgn"]
 populate_dropdown(matches, '#fileselect')
 await _new_match(None)
